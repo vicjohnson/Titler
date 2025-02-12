@@ -48,9 +48,21 @@
         </form>
     </div>
     <script>
+        const el = document.getElementById('new-title');
+        const params = new URLSearchParams(window.location.search);
+
+        const title = params.get('title');
+        if (title) {
+            document.title = params.get('title');
+            el.value = title;
+        } else {
+            document.title = 'Titler';
+        }
+
+
         function change() {
-            const el = document.getElementById('new-title');
-            document.title = el.value;
+            params.set('title', el.value);
+            window.location.search = params.toString();
             return false;
         }
     </script>
