@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titler</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+
+            font-size: 24px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .container {
+            margin: auto;
+            text-align: center;
+            padding-top: 25%;
+            width: 25rem;
+        }
+
+        input[type="text"] {
+            font-size: 24px;
+            padding: 8px;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <form onsubmit="change(); return false">
+            <h1>Titler</h1>
+            <input id="new-title" type="text" />
+            <button type="submit">Change</button>
+        </form>
+    </div>
+    <script>
+        function change() {
+            const el = document.getElementById('new-title');
+            document.title = el.value;
+            return false;
+        }
+    </script>
+  </body>
+</html>
